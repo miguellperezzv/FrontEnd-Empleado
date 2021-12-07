@@ -23,9 +23,10 @@ const routes: Routes = [
     path:'seguridad',
     loadChildren:()=>import("./modulos/seguridad/seguridad.module").then(x=>x.SeguridadModule)
   },
+  
   {
-    path:'empleado',
-    loadChildren:()=>import("./modulos/empleado/empleado.module").then(x=>x.EmpleadoModule)
+    path:'administracion',
+    loadChildren:()=>import("./modulos/administracion/administracion.module").then(x=>x.AdministracionModule)
   }
 ];
 
