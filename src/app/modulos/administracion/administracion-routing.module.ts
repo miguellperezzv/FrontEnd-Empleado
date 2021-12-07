@@ -1,3 +1,4 @@
+import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearEmpleadoComponent } from './empleado/crear-empleado/crear-empleado.component';
@@ -6,6 +7,7 @@ import { EliminarEmpleadoComponent } from './empleado/eliminar-empleado/eliminar
 
 
 const routes: Routes = [
+  
   {
     path: 'crear-empleado',
   component:CrearEmpleadoComponent

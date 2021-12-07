@@ -9,16 +9,17 @@ const routes: Routes = [
     path:"inicio",
     component:InicioComponent
   },
+  
   {
     path:"",
     pathMatch:"full",
     redirectTo:"/inicio"
   },
-  
+  /*
   {
     path:'**',
     component:ErrorComponent
-  },
+  },*/
   {
     path:'seguridad',
     loadChildren:()=>import("./modulos/seguridad/seguridad.module").then(x=>x.SeguridadModule)
@@ -27,7 +28,7 @@ const routes: Routes = [
   {
     path:'administracion',
     loadChildren:()=>import("./modulos/administracion/administracion.module").then(x=>x.AdministracionModule)
-  }
+  },
 ];
 
 @NgModule({
