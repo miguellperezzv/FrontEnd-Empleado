@@ -1,14 +1,15 @@
 <nav>
     <div class="nav-wrapper">
-      <a routerLink="seguridad/identificacion" class="brand-logo">Ingresar</a>
+      <a  class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="">Sass</a></li>
-        <li><a routerLink="administracion/crear-empleado">Registrar Empleado</a></li>
-        <li><a routerLink="administracion/editar-empleado">Editar Empleado</a></li>
-        <li><a routerLink="administracion/eliminar-empleado">Eliminar Empleado</a></li>
-        <li><a routerLink="administracion/buscar-empleado">Buscar Empleado</a></li>
         
+        <li *ngIf="seInicioSesion"><a routerLink="administracion/crear-empleado">Registrar Empleado</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="administracion/editar-empleado">Editar Empleado</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="administracion/eliminar-empleado">Eliminar Empleado</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="administracion/buscar-empleado">Buscar Empleado</a></li>
+        <li *ngIf="!seInicioSesion"><a routerLink="seguridad/identificacion">Ingresar</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="seguridad/cerrarSesion">Cerrar Sesión</a></li>
         
 
       </ul>
