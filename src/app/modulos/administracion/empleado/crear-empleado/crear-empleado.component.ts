@@ -17,6 +17,7 @@ export class CrearEmpleadoComponent implements OnInit {
     'apellido' : ['', [Validators.required]],
     'correo' : ['', [Validators.required]],
     'telefono' : ['', [Validators.required]],
+    'password' : ['', [Validators.required]],
   })
   constructor(private fb:FormBuilder, 
     private servicioEmpleado:EmpleadoService,
@@ -32,15 +33,13 @@ export class CrearEmpleadoComponent implements OnInit {
     let apellido = this.fgValidador.controls['apellido'].value;
     let correo = this.fgValidador.controls['correo'].value;
     let telefono = this.fgValidador.controls['telefono'].value;
+    let password = this.fgValidador.controls['password'].value;
     let e = new ModeloEmpleado();
     e.nombre = nombre;
     e.apellido = apellido;
     e.correo = correo;
     e.telefono = telefono;
-    console.log(nombre);
-    console.log(apellido);
-    console.log(correo);
-    console.log(telefono);
+    e.password = password;
 
     this.servicioEmpleado.CrearEmpleado(e).subscribe((datos: ModeloEmpleado)=>{
       alert("Almacenado correctamente")

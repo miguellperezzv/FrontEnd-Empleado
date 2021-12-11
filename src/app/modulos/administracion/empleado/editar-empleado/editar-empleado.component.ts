@@ -12,6 +12,7 @@ import { EmpleadoService } from 'src/app/servicios/empleado.service';
 export class EditarEmpleadoComponent implements OnInit {
 
   id:string=""
+  pwd:string=""
 
   fgValidador: FormGroup= this.fb.group({
     'id' : ['', [Validators.required]],
@@ -34,6 +35,7 @@ export class EditarEmpleadoComponent implements OnInit {
   BuscarEmpleado(){
     this.servicioEmpleado.ObtenerEmpleadoPorId(this.id).subscribe((datos:ModeloEmpleado)=>
     {
+      this.fgValidador.controls["pwd"].setValue(this.pwd);
       this.fgValidador.controls["id"].setValue(this.id);
       this.fgValidador.controls["nombre"].setValue(datos.nombre);
       this.fgValidador.controls["apellido"].setValue(datos.apellido);
@@ -54,6 +56,7 @@ export class EditarEmpleadoComponent implements OnInit {
     e.correo = correo;
     e.telefono = telefono;
     e.id = this.id;
+    e.password=this.pwd;
 
     this.servicioEmpleado.ActualizarEmpleado(e).subscribe((datos: ModeloEmpleado)=>{
       alert("Actualizado correctamente")
