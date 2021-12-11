@@ -14,7 +14,7 @@ const routes: Routes = [
   component:CrearEmpleadoComponent
   },
   {
-    path: 'editar-empleado',
+    path: 'editar-empleado/:id',
     component:EditarEmpleadoComponent
   },
   {

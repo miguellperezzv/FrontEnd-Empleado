@@ -6,6 +6,7 @@ import { CrearEmpleadoComponent } from './empleado/crear-empleado/crear-empleado
 import { EditarEmpleadoComponent } from './empleado/editar-empleado/editar-empleado.component';
 import { EliminarEmpleadoComponent } from './empleado/eliminar-empleado/eliminar-empleado.component';
 import { BuscarEmpleadoComponent } from './empleado/buscar-empleado/buscar-empleado.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { BuscarEmpleadoComponent } from './empleado/buscar-empleado/buscar-emple
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class AdministracionModule { }

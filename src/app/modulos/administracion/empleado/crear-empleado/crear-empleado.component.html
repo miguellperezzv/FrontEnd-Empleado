@@ -2,33 +2,33 @@
 
 
 <div class="row">
-    <form class="col s12">
+    <form [formGroup]="fgValidador" (ngSubmit)="GuardarEmpleado()" class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input  id="Nombre" type="text" class="validate">
+          <input formControlName="nombre"  id="Nombre" type="text" class="validate">
           <label for="Nombre">Nombre</label>
         </div>
         <div class="input-field col s6">
-          <input id="Apellido" type="text" class="validate">
+          <input formControlName="apellido" id="Apellido" type="text" class="validate">
           <label for="Apellido">Apellido</label>
         </div>
       </div>
       
       <div class="row">
         <div class="input-field col s12">
-          <input id="correo" type="email" class="validate">
+          <input formControlName="correo" id="correo" type="email" class="validate">
           <label for="correo">correo</label>
         </div>
       </div>
      
       <div class="row">
         <div class="input-field col s12">
-          <input id="telefono" type="text" class="validate">
+          <input formControlName="telefono" id="telefono" type="text" class="validate">
           <label for="telefono">telefono</label>
         </div>
       </div>
       <div class="row">
-        <button>Registrar</button>
+        <button [disabled]="!fgValidador.valid">Registrar</button>
       </div>
     </form>
   </div>

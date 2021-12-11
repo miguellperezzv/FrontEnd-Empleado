@@ -1,1 +1,32 @@
-<p>editar-empleado works!</p>
+<div class="row">
+    <form [formGroup]="fgValidador" (ngSubmit)="EditarEmpleado()" class="col s12">
+        <input type="hidden" formControlName="id">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="nombre"  id="Nombre" type="text" class="active">
+          <label for="Nombre">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="apellido" id="Apellido" type="text" class="active">
+          <label for="Apellido">Apellido</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="correo" id="correo" type="email" class="active">
+          <label for="correo">correo</label>
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="telefono" id="telefono" type="text" class="active">
+          <label for="telefono">telefono</label>
+        </div>
+      </div>
+      <div class="row">
+        <button [disabled]="!fgValidador.valid">Registrar</button>
+      </div>
+    </form>
+  </div>
