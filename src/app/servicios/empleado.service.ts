@@ -33,7 +33,7 @@ export class EmpleadoService {
   }
 
   ActualizarEmpleado(empleado:ModeloEmpleado){
-    return this.http.put<ModeloEmpleado>(`${this.url}/empleados`,empleado, {
+    return this.http.put<ModeloEmpleado>(`${this.url}/empleados/${empleado.id}`,empleado, {
       headers: new HttpHeaders({
         'Authorization' : `Bearer ${this.token}`
       })
